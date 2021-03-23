@@ -52,7 +52,7 @@
     #设置服务注册中心URL，用于client与Server交流
     eureka.client.service-url.defaultZone=http://eureka2.com:8762/eureka
     eureka.instance.appname=${spring.application.name}
-    #主机名，必填
+    #主机名
     eureka.instance.hostname=eureka1.com
     ```
 
@@ -70,7 +70,7 @@
     #设置服务注册中心URL，用于client与Server交流
     eureka.client.service-url.defaultZone=http://eureka2.com:8762/eureka
     eureka.instance.appname=${spring.application.name}
-    #主机名，必填
+    #主机名
     eureka.instance.hostname=eureka2.com
     ```
 
