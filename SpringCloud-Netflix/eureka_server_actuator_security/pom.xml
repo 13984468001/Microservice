@@ -46,6 +46,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- SpringCloud Admin 监控检材 Client 端 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.3.1</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

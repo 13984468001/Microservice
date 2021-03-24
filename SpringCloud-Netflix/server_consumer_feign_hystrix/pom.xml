@@ -71,6 +71,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
         </dependency>
+        <!-- SpringCloud Admin 监控检材 Client 端 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.3.1</version>
+        </dependency>
 
         <!-- common_api -->
         <dependency>

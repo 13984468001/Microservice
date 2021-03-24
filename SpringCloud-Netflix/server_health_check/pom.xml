@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lipiao</groupId>
-    <artifactId>server_provide_feign</artifactId>
+    <artifactId>server_health_check</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>server_provide_feign</name>
-    <description>Demo project for Spring Boot</description>
+    <name>server_health_check</name>
+    <description>SpringCloud Admin 健康检查服务</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -46,20 +46,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!-- openfeign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <!-- Feign默认所有带参数的请求都是Post，想要使用指定的提交方式需引入依赖 -->
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-httpclient</artifactId>
-        </dependency>
         <!-- 安全认证 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- SpringCloud Admin健康检查 服务服务端、UI -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>2.3.1</version>
         </dependency>
         <!-- SpringCloud Admin 监控检材 Client 端 -->
         <dependency>
@@ -67,13 +68,13 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>2.3.1</version>
         </dependency>
-
-        <!-- common_api -->
+        <!-- 健康检查异常情况邮件通知 -->
         <dependency>
-            <groupId>com.lipiao</groupId>
-            <artifactId>common_api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -112,7 +113,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.lipiao.server_provide_feign.eurekaServerApplication</mainClass>
+                    <mainClass>com.lipiao.server_health_check.eurekaServerApplication</mainClass>
                     <!-- 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
                     <fork>true</fork>
                 </configuration>

@@ -1,6 +1,6 @@
 # 工程简介
 
-1. openfeign 服务消费方
+1. openfeign 服务消费方，为了演示zuul，消除了Security模块
     
 1.1. feign默认集成了ribbon(负载均衡)和hystrix(熔断)
 

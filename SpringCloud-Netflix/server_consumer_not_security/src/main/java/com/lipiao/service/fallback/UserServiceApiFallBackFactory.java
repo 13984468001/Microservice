@@ -32,7 +32,7 @@ public class UserServiceApiFallBackFactory implements FallbackFactory<UserServic
             @Override
             public String getUser(String id) {
                 throwable.printStackTrace();
-                return "服务降级……";
+                return "服务降级……<br>" + throwable.getMessage();
             }
 
             /**
