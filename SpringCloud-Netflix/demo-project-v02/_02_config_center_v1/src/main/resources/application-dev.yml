@@ -1,0 +1,20 @@
+############################################################################################################# server
+server:
+  port: 9000
+############################################################################################################# spring
+############################################################################################################# eureka
+eureka:
+  client:
+    #register-with-eureka: false #注册自己到Eureka_Server，默认true。单节点时本身就是 Server，因此设置为false。
+    #fafetch-registry: false #是否从Eureka_Server拉取注册信息，默认是true。单节点时本身就是 Server，不用拉去。
+    service-url:
+      defaultZone: http://eureka1.com:8761/eureka,http://eureka2.com:8762/eureka
+    registry-fetch-interval-seconds: 5 #表示eureka client间隔多久去拉取服务注册信息，默认为30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
+  instance:
+    namespace: ${spring.application.name}
+    hostname: ${spring.application.name}
+    lease-renewal-interval-in-seconds: 5  #续约发送间隔默认30秒，心跳间隔
+    lease-expiration-duration-in-seconds: 90 # 续约到期时间（默认90秒）
+  server:
+    enable-self-preservation: false #关闭自我保护模式
+    eviction-interval-timer-in-ms: 3000 #失效服务间隔，（默认是：60 * 1000）

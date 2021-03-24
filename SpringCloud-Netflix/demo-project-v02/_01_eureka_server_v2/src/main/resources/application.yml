@@ -1,0 +1,6 @@
+############################################################################################################# spring
+spring:
+  application:
+    name: _01_eureka_server_v2 #与项目名保持一致
+  profiles:
+  #active: eureka1 #通过VM Options传入 “-Dspring.profiles.active=eureka2”
