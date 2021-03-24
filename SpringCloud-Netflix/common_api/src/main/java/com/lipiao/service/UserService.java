@@ -1,7 +1,10 @@
 package com.lipiao.service;
 
 import com.lipiao.entity.User;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -11,7 +14,8 @@ import java.util.List;
  * <p>
  * 用户公共接口
  */
-@RequestMapping("/users")
+//整合hystrix的时候别加这层，否则项目起不来，这应该是feign的bug
+//@RequestMapping("/users")
 public interface UserService {
 
     /**

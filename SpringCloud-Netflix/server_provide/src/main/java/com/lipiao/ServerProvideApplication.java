@@ -4,10 +4,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-//新版本可不加
+/**
+ * @author LIPIAO
+ * @date 2021/3/24 11:20
+ * @EnableEurekaClient 新版本可不加
+ */
 @EnableEurekaClient
 @SpringBootApplication
-class ServerProvideApplication {
+public class ServerProvideApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ServerProvideApplication.class, args);

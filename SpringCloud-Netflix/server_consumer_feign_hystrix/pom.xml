@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lipiao</groupId>
-    <artifactId>server_consumer_feign</artifactId>
+    <artifactId>server_consumer_feign_hystrix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>server_consumer_feign</name>
+    <name>server_consumer_feign_hystrix</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -61,6 +61,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- Hystrix 熔断 降级 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <!-- Hystrix 仪表盘 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
 
         <!-- common_api -->
         <dependency>
@@ -106,7 +116,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.lipiao.server_consumer_feign.eurekaServerApplication</mainClass>
+                    <mainClass>com.lipiao.server_consumer_feign_hystrix.eurekaServerApplication</mainClass>
                     <!-- 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
                     <fork>true</fork>
                 </configuration>

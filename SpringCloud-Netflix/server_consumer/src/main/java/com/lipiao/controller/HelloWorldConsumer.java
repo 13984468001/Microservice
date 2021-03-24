@@ -26,7 +26,7 @@ public class HelloWorldConsumer {
 
     //注入依赖
     @Bean
-    //表示开启负载均衡
+    /**表示开启负载均衡*/
     @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
@@ -36,7 +36,9 @@ public class HelloWorldConsumer {
     EurekaClient eurekaClient;
     @Resource
     RestTemplate restTemplate;
-    //通过它随机获取到指定服务进行远程调用，会自动进行负责均衡
+    /**
+     * 通过它随机获取到指定服务进行远程调用，会自动进行负责均衡
+     */
     @Autowired
     LoadBalancerClient loadBalancerClient;
 

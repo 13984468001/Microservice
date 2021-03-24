@@ -94,5 +94,15 @@ public class UserController implements UserService {
         return new User(id, "马小六 PORT=" + port, 18).toString();
     }
 
+    /**
+     * 演示熔断
+     *
+     * @return 整除结果
+     */
+    @GetMapping("/getUserToExecution")
+    public String getUserToExecution() {
+        return "" + 1 / 0;
+    }
+
 
 }
