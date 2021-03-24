@@ -21,4 +21,4 @@ management:
       show-details: always
 ############################################################################################################# custom
 custom:
-  demoConfigParam: "custom param v1"
+  param: "custom param v1"
