@@ -1,6 +1,41 @@
+############################################################################################################# server
+server:
+  port: 9000
 ############################################################################################################# spring
 spring:
   application:
     name: _02_config_center_v1 #与项目名保持一致
-  profiles:
-    active: dev
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/lipiaoplus/microservice.git
+          username:
+          password:
+          #如果没配置路径，则在根目录下读取配置文件。然后在启动项目后访问配置文件，不需要拼路径，直接跟文件名如：http://localhost:9000/_03_server_provide_v2-dev.yml
+          search-paths: SpringCloud-Netflix/demo-project-v02/_02_config_center_v1/config_files
+        #bootstrap: true #混合本地配置文件使用
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+############################################################################################################# eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:8761/eureka,http://eureka2.com:8762/eureka
+############################################################################################################# actuator
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*" #有坑，不写引号不好使
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
