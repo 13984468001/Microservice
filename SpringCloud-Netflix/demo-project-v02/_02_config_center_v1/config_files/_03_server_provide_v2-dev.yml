@@ -20,4 +20,5 @@ management:
     health:
       show-details: always
 ############################################################################################################# custom
-demoConfigParam: "来之配置中心的个性化配置参数"
+custom:
+  demoConfigParam: "custom param v1"
