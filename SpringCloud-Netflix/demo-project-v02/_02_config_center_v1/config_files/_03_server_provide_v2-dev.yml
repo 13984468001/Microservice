@@ -10,3 +10,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1.com:8761/eureka,http://eureka2.com:8762/eureka
+
+
+############################################################################################################# custom
+demoConfigParam: 来之配置中心的个性化配置参数
